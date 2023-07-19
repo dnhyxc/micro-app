@@ -1,4 +1,5 @@
 import { createApp } from 'vue';
+import { VueMasonryPlugin } from 'vue-masonry';
 import { mountDirectives, EventBus } from '@/utils';
 import router from '@/router';
 import store from '@/store/initStore';
@@ -21,6 +22,8 @@ mountDirectives(app);
 
 // 使用 provide 依赖注入将事件总线注入
 app.provide('$bus', EventBus);
+
+app.use(VueMasonryPlugin);
 
 // 挂载实例
 app.mount('#app');
